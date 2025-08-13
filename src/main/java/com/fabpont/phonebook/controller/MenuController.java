@@ -2,11 +2,13 @@ package com.fabpont.phonebook.controller;
 
 import java.util.Scanner;
 
+import com.fabpont.phonebook.entities.Contact;
 import com.fabpont.phonebook.view.MenuView;
 
 public class MenuController {
         private final Scanner scanner = new Scanner(System.in);
         private final MenuView menuView = new MenuView();
+        private final ContactController contactController = new ContactController();
 
         public void menuOperation(){
             int option;
@@ -18,8 +20,8 @@ public class MenuController {
 
                 switch (option) {
                     case 1:
-
-                    break;
+                        contactController.addContact();
+                        break;
                     case 2:
 
                     break;
@@ -38,6 +40,6 @@ public class MenuController {
                     break;
                     case 0:
                 }
-            }while(option < 7 );
+            }while(option != 0 );
         }
 }

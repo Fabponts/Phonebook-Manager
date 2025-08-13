@@ -8,6 +8,7 @@ public class MenuView {
     public void Menu(){
         System.out.println("""
         ---Menu---
+        0: Exit
         1: Add a new contact
         2: Show contacts;
         3: Delete a contact;

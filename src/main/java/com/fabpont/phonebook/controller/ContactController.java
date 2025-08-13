@@ -1,4 +1,34 @@
 package com.fabpont.phonebook.controller;
 
+import java.util.Scanner;
+import com.fabpont.phonebook.entities.Contact;
+
 public class ContactController {
+    Scanner scanner = new Scanner(System.in);
+    Contact contact = new Contact();
+
+    public void addContact(){
+        System.out.println("Please enter the name of the contact you want to add: ");
+        contact.setFirstName(scanner.nextLine());
+        System.out.println("Please enter the last name of the contact you want to add: ");
+        contact.setLastName(scanner.nextLine());
+        System.out.println("Please enter the phone number of the contact you want to add: ");
+        contact.setPhone(scanner.nextLine());
+    }
+    public void deleteContact(){
+
+    }
+
+    public void showContacts(){
+
+    }
+    public void updateContact(){
+
+    }
+    public void searchContact(){
+
+    }
+    public void resetPhonebook(){
+
+    }
 }
