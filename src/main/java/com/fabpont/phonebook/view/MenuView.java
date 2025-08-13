@@ -1,9 +1,5 @@
 package com.fabpont.phonebook.view;
 
-import java.util.Scanner;
-import java.util.logging.Logger;
-
-
 public class MenuView {
     // Method MenuView
      public void IntroductionView(){
