@@ -12,6 +12,8 @@ public class ContactController {
         contact.setFirstName(scanner.nextLine());
         System.out.println("Please enter the last name of the contact you want to add: ");
         contact.setLastName(scanner.nextLine());
+        System.out.println("Please enter the contact email:");
+        contact.setEmail(scanner.nextLine());
         System.out.println("Please enter the phone number of the contact you want to add: ");
         contact.setPhone(scanner.nextLine());
     }
