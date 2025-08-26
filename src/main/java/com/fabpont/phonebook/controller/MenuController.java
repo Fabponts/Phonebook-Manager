@@ -35,7 +35,7 @@ public class MenuController {
                     break;
 
                     case 6:
-
+                        contactController.resetPhonebook();
                     break;
                     case 0:
                 }

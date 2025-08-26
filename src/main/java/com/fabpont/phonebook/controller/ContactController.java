@@ -35,6 +35,6 @@ public class ContactController {
 
     }
     public void resetPhonebook(){
-
+        contactDAO.resetData();
     }
 }

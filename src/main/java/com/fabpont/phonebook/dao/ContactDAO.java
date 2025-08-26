@@ -26,4 +26,16 @@ public class ContactDAO {
             System.out.println("Error in inserting contact" + e.getMessage());
         }
     }
+    public void resetData(){
+        String sql = "TRUNCATE TABLE contacts";
+
+        try(Connection conn = BdgConnection.getConnection();
+            PreparedStatement smt = conn.prepareStatement(sql)) {
+
+            smt.execute();
+            System.out.println("Contact Data Reset Successfully");
+        }catch (SQLException e){
+            System.out.println("Error in reset contacts" + e.getMessage());
+        }
+    }
 }
