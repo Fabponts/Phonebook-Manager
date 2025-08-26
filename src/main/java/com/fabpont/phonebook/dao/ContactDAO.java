@@ -1,6 +1,6 @@
 package com.fabpont.phonebook.dao;
 
-import com.fabpont.phonebook.config.BgdConnection;
+import com.fabpont.phonebook.config.BdgConnection;
 import com.fabpont.phonebook.entities.Contact;
 
 import java.sql.Connection;
@@ -11,7 +11,7 @@ public class ContactDAO {
     public void insertData(Contact contact){
         String sql = "INSERT INTO contacts (name, lastname, email, phone) VALUES ( ?, ?, ?, ?)";
 
-        try(Connection conn = BgdConnection.getConnection();
+        try(Connection conn = BdgConnection.getConnection();
             PreparedStatement stms = conn.prepareStatement(sql)){
 
             stms.setString(1,contact.getFirstName());

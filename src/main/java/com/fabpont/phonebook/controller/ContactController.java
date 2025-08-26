@@ -2,10 +2,12 @@ package com.fabpont.phonebook.controller;
 
 import java.util.Scanner;
 import com.fabpont.phonebook.entities.Contact;
+import com.fabpont.phonebook.dao.ContactDAO;
 
 public class ContactController {
     Scanner scanner = new Scanner(System.in);
     Contact contact = new Contact();
+    ContactDAO contactDAO = new ContactDAO();
 
     public void addContact(){
         System.out.println("Please enter the name of the contact you want to add: ");
@@ -16,6 +18,8 @@ public class ContactController {
         contact.setEmail(scanner.nextLine());
         System.out.println("Please enter the phone number of the contact you want to add: ");
         contact.setPhone(scanner.nextLine());
+
+        contactDAO.insertData(contact);
     }
     public void deleteContact(){
 
