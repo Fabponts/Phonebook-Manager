@@ -2,7 +2,6 @@ package com.fabpont.phonebook.controller;
 
 import java.util.Scanner;
 
-import com.fabpont.phonebook.entities.Contact;
 import com.fabpont.phonebook.view.MenuView;
 
 public class MenuController {
