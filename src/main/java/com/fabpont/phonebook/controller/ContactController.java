@@ -29,7 +29,7 @@ public class ContactController {
     }
 
     public void showContacts(){
-
+        contactDAO.showContact();
     }
     public void updateContact(){
 
