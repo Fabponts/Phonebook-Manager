@@ -22,10 +22,10 @@ public class MenuController {
                         contactController.addContact();
                         break;
                     case 2:
-
+                        contactController.showContacts();
                     break;
                     case 3:
-
+                        contactController.deleteContact();
                     break;
                     case 4:
 

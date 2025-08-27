@@ -22,7 +22,10 @@ public class ContactController {
         contactDAO.insertData(contact);
     }
     public void deleteContact(){
+        System.out.println("Please enter the email of the contact you want to delete: ");
+        contact.setEmail(scanner.nextLine());
 
+        contactDAO.deleteContact(contact);
     }
 
     public void showContacts(){

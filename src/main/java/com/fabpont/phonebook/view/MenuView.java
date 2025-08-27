@@ -12,7 +12,7 @@ public class MenuView {
         1: Add a new contact
         2: Show contacts;
         3: Delete a contact;
-        4: Edit a contact");
+        4: Edit a contact";
         5: Search for a contact
         6: Reset your phonebook
         """);

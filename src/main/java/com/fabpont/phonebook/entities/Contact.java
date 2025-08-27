@@ -16,6 +16,7 @@ public class Contact {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
+        this.email = email;
     }
 
     // Getters and Setters

@@ -38,4 +38,18 @@ public class ContactDAO {
             System.out.println("Error in reset contacts" + e.getMessage());
         }
     }
+    public void deleteContact(Contact contact){
+        String sql = "DELETE FROM contacts WHERE email = ? ";
+
+        try(Connection conn = BdgConnection.getConnection();
+            PreparedStatement smt = conn.prepareStatement(sql)){
+                smt.setString(1, contact.getEmail());
+
+                smt.execute();
+            System.out.println("Contact Deleted Successfully");
+        }
+        catch(SQLException e){
+            System.out.println("Error in deleting contact" + e.getMessage());
+        }
+    }
 }
