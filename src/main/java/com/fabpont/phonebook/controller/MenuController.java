@@ -32,7 +32,7 @@ public class MenuController {
                         contactController.updateContact();
                     break;
                     case 5:
-
+                        contactController.searchContact();
                     break;
 
                     case 6:

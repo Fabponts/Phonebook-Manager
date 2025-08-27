@@ -87,11 +87,42 @@ public class ContactDAO  {
                 String email = rs.getString("email");
                 String phone = rs.getString("phone");
 
-                System.out.printf("ID: %d | Name: %s | email: %s | Phone: %s", id, name,lastName,email,phone);
+                System.out.printf("ID: %d | Name: %s %s | email: %s | Phone: %s \n", id, name,lastName,email,phone);
             }
         }
         catch (SQLException e){
             System.out.println("Error in show contact" + e.getMessage());
+        }
+    }
+    public void searchContact(Contact contact) {
+        String sql = "SELECT * FROM contacts WHERE name = ? ";
+
+        try(Connection conn = BdgConnection.getConnection();
+            PreparedStatement stm = conn.prepareStatement(sql)){
+
+            stm.setString(1, contact.getFirstName());
+            ResultSet rs = stm.executeQuery();
+
+            System.out.println("\n--- Search Results ---");
+            boolean found = false;
+            while (rs.next()) {
+                found = true;
+                int id = rs.getInt("id");
+                String firstName = rs.getString("name");
+                String lastName = rs.getString("lastname");
+                String email = rs.getString("email");
+                String phone = rs.getString("phone");
+
+                System.out.printf("ID: %d | Name: %s %s | Email: %s | Phone: %s%n",
+                        id, firstName, lastName, email, phone);
+            }
+
+            if (!found) {
+                System.out.println("No contact found with that name.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error in search contact: " + e.getMessage());
         }
     }
 }

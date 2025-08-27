@@ -51,7 +51,10 @@ public class ContactController {
         contactDAO.updateContact(contact);
     }
     public void searchContact(){
+        System.out.println("Please enter the name of the contact you want to search:");
+        contact.setFirstName(scanner.nextLine());
 
+        contactDAO.searchContact(contact);
     }
     public void resetPhonebook(){
         contactDAO.resetData();
