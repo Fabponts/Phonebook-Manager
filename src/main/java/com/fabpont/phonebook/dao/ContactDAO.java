@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ContactDAO {
+public class ContactDAO  {
     public void insertData(Contact contact) {
         String sql = "INSERT INTO contacts (name, lastname, email, phone) VALUES ( ?, ?, ?, ?)";
 
@@ -54,6 +54,23 @@ public class ContactDAO {
             System.out.println("Error in deleting contact" + e.getMessage());
         }
     }
+    public void updateContact(Contact contact) {
+        String sql = "UPDATE contacts SET name = ?, lastname = ?, email = ?, phone = ? WHERE id = ?";
+
+        try(Connection conn = BdgConnection.getConnection();
+            PreparedStatement smt = conn.prepareStatement(sql)){
+            smt.setString(1, contact.getFirstName());
+            smt.setString(2, contact.getLastName());
+            smt.setString(3, contact.getEmail());
+            smt.setString(4, contact.getPhone());
+            smt.setInt(5, contact.getId());
+
+            smt.executeUpdate();
+
+        }catch (SQLException e){
+                System.out.println("Error in updating contact" + e.getMessage());
+        }
+    }
 
     public void showContact() {
         String sql = "SELECT * FROM contacts";
@@ -72,11 +89,9 @@ public class ContactDAO {
 
                 System.out.printf("ID: %d | Name: %s | email: %s | Phone: %s", id, name,lastName,email,phone);
             }
-        }catch (SQLException e){
+        }
+        catch (SQLException e){
             System.out.println("Error in show contact" + e.getMessage());
         }
-
-
-
     }
 }

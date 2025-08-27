@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class BdgConnection {
 
     public static Connection getConnection() {
-        String url = "jdbc:mysql://localhost:3306/phonebook"; // seu banco
+        String url = "jdbc:mysql://localhost:3306/phonebook";
         String user = "root";
         String password = "1234";
 

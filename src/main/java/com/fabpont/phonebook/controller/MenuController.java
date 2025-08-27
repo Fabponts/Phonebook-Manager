@@ -28,7 +28,8 @@ public class MenuController {
                         contactController.deleteContact();
                     break;
                     case 4:
-
+                        contactController.showContacts();
+                        contactController.updateContact();
                     break;
                     case 5:
 

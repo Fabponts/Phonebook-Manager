@@ -32,7 +32,23 @@ public class ContactController {
         contactDAO.showContact();
     }
     public void updateContact(){
+        System.out.println("Please enter the id of the contact you want to update: ");
+        contact.setId(scanner.nextInt());
+        scanner.nextLine();
 
+        System.out.println("Please enter the name of the contact you want to update: ");
+        contact.setFirstName(scanner.nextLine());
+
+        System.out.println("Please enter the last name of the contact you want to update: ");
+        contact.setLastName(scanner.nextLine());
+
+        System.out.println("Please enter the contact email:");
+        contact.setEmail(scanner.nextLine());
+
+        System.out.println("Please enter the phone number of the contact you want to update: ");
+        contact.setPhone(scanner.nextLine());
+
+        contactDAO.updateContact(contact);
     }
     public void searchContact(){
 

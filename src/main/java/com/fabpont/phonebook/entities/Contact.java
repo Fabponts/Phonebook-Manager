@@ -3,6 +3,7 @@ package com.fabpont.phonebook.entities;
 public class Contact {
 
    // Attributes of Contacts
+    private Integer id;
     private String firstName;
     private String lastName;
     private String email;
@@ -12,7 +13,8 @@ public class Contact {
     public Contact(){
     }
 
-    public Contact(String firstName, String lastName, String email, String phone) {
+    public Contact(Integer id, String firstName, String lastName, String email, String phone) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -51,6 +53,12 @@ public class Contact {
 
     public String getEmail() {
         return email;
+    }
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }
